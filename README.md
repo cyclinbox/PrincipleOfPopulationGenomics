@@ -2,6 +2,11 @@
 
 > Hartl and Clark. Principle of population genetics, 4th
 
+## 如何阅读
+
+文档已经以GitHub Pages的形式发布。请访问[https://cyclinbox.github.io/PrincipleOfPopulationGenomics/](https://cyclinbox.github.io/PrincipleOfPopulationGenomics/)进行阅读。
+
+
 ## 目录组织
 
 ```
