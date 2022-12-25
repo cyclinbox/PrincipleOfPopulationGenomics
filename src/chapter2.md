@@ -1,5 +1,9 @@
 # 第2章 遗传变异的组织方式
 
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"><a href="index.html"> <i class="fa fa-arrow-left"></i><b> 返回目录 </b></a>
+
+<div style="position:fixed;height:20px;right:50px;bottom:80px;background-color:#ddd;color:#069;padding:5px;border-radius:20px;box-shadow:0px 0px 4px #aaa;cursor:pointer;" onclick="javascript:window.location.href='#top'"><i class="fa fa-arrow-up"></i><b> 返回顶部 </b></div>
+
 - [第2章 遗传变异的组织方式](#第2章-遗传变异的组织方式)
   - [2.1 随机交配](#21-随机交配)
     - [非重叠世代](#非重叠世代)

@@ -1,5 +1,9 @@
 # 前言
 
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"><a href="index.html"> <i class="fa fa-arrow-left"></i><b> 返回目录 </b></a>
+
+<div style="position:fixed;height:20px;right:50px;bottom:80px;background-color:#ddd;color:#069;padding:5px;border-radius:20px;box-shadow:0px 0px 4px #aaa;cursor:pointer;" onclick="javascript:window.location.href='#top'"><i class="fa fa-arrow-up"></i><b> 返回顶部 </b></div>
+
 ## 为什么研究群体遗传，为什么是现在？
 
 第四版的《群体遗传学原理》提供了针对最新的群体遗传学的介绍。它适合相关领域（如人类遗传学）的所有学生如本科生和研究生，以及相关领域的新人。本书在理论与观察之间取得了平衡，并旨在优化其作为教辅工具的使用。我们强调了在真实数据上的批判性和分析性思考。因此，我们在章节中穿插了大量问题，以鼓励学生在学习过程中停下来思考一小会儿，想一想刚刚学习了什么，如何将所学应用到实际。
