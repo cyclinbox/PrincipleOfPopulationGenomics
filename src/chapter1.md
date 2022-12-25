@@ -497,18 +497,18 @@ DNA指纹技术也被应用于植物和动物的自然交配系统的研究，�
 
 1. Shown here is a table of a phenotypic values measured on each member of a random sample of 100 individuals. Estimate the mean,variance, and standard deviation in the population from which the sample was drawn. 
 
-| | | | | | | | | | |
-|--|--|---|---|--|--|--|---|--|---|
-|82|80|106|102|82|94|74|123|93|110|
-|102|112|105|97|125|96|89|105|111|97|
-|106|116|127|140|117|94|130|82|79|80|
-|91|114|81|128|73|130|95|94|98|109|
-|99|96|109|71|90|95|107|92|112|110|
-|87|101|113|117|97|80|139|108|107|103|
-|120|86|90|67|88|87|120|124|112|107| 
-|120|101|104|97|72|106|113|88|120|99|
-|106|75|100|82|98|126|103|118|120|104|
-|106|73|88|142|89|96|112|95|99|79|
+    | | | | | | | | | | |
+    |--|--|---|---|--|--|--|---|--|---|
+    |82|80|106|102|82|94|74|123|93|110|
+    |102|112|105|97|125|96|89|105|111|97|
+    |106|116|127|140|117|94|130|82|79|80|
+    |91|114|81|128|73|130|95|94|98|109|
+    |99|96|109|71|90|95|107|92|112|110|
+    |87|101|113|117|97|80|139|108|107|103|
+    |120|86|90|67|88|87|120|124|112|107| 
+    |120|101|104|97|72|106|113|88|120|99|
+    |106|75|100|82|98|126|103|118|120|104|
+    |106|73|88|142|89|96|112|95|99|79|
 
 2. Assuming that the sample in Problem 1 was drawn from a normal distribution, what number of individuals in the sample is expected to have a phenotypic value exceeding the mean plus one standard deviation? What number of individuals in the sample is expected to have a phenotypic value smaller than the mean minus one standard deviation?How do these. predictions compare with the observations? 
 3. Assuming that the sample in Problem 1 was drawn from a normal distribution, what number of individuals in the sample is expected to have a phenotypic value exceeding the mean plus two standard deviations? What number of individuals in the sample is expected to have a phenotypic value smaller than the mean minus two standard deviations? How do these predictions compare with the observations? 
@@ -518,24 +518,24 @@ DNA指纹技术也被应用于植物和动物的自然交配系统的研究，�
 7. Many proteins exist in an active form only as dimers,with the two subunits held together by hydrogen bonds or covalent cysteine bridges.If an enzyme is active only as a dimer,then in a population with two alleles encoding fast and slow migrating forms of the protein,what kind of banding pattern would you expect from tissue from a heterozygous genotype?  
 8. The diagram shows the result of electrophoresis of tissue samples from 240 Canadian geese, *Branta canadensis* , stained for the enzyme aldehyde oxidase.The samples were placed in the depressions ("wells")shown at the top of the gel, and as electrophoresis took place the proteins migrated in a downward direction. The numbers are the number of individuals in the sample showing each banding pattern.  Estimate the allele frequencies of the fast and slow alleles,and calculate the expected genotype frequencies assuming Hardy-Weinberg proportions. Do the observed results seem to fit these expected values? 
 
-![](asset/fig1.problem8.png)
+    ![](asset/fig1.problem8.png)
 
 9. The accompanying gel diagram summarizes the results of electrophoresis of 99 individuals from a population of pointed phlox ( *Phlox cuspidata* ). Does this population appear to be in Hardy-Weinberg proportions? 
 
-![](asset/fig1.problem9.png)
+    ![](asset/fig1.problem9.png)
 
 10. A gene with two alleles in a population has genotype frequencies $P$ , $Q$ , and $R$ for the genotypes AA, Aa, and aa, respectively, Show that,if the population is in Hardy-Weinberg proportions,then the expected relation between the genotype frequencies is $PR=Q^2/4$. 
 11. How many copies of a fragment of DNA should be present after 30 rounds of PCR,assuming perfect efficiency? 
 12. Four sequences of a 1200 bp DNA fragment from a gene gave the following counts of pairwise differences: 4,7,5,3,6,5. What is the estimate of the number of pairwise mismatches for this sample? 
 13. The nucleotide sequences shown here are the complete set of polymorphic nucleotides found in a region of 5 kb in a sample of six chromosomes from corn, *Zea mays* .The polymorphic nucleotides are not adjacent,as shown here,but scattered throughout the 5 kb.What is the number of segregating sites $S$ and the average number of pairwise mismatches $\Pi$ among these sequences?Estimate $\theta$ from both $S$ and $\Pi$. Do these estimates seem to be consistent with one another? If this result were found for a larger sample, what might it suggest about the selective forces acting on the sequence polymorphisms? 
 
-```bash
-GCCTT TATGG CCTGT ATGAG 
-ACTAT TAAGG CTTGT TTGAT 
-ACCAC TGTCG CCCGT ACGCG 
-GTCAT TGTGG TCCTC TTGAG 
-GCTTT TATGA CCTTT ATAAG 
-ACCAT CATGA CCTTT ATAAT 
-```
+    ```bash
+    GCCTT TATGG CCTGT ATGAG 
+    ACTAT TAAGG CTTGT TTGAT 
+    ACCAC TGTCG CCCGT ACGCG 
+    GTCAT TGTGG TCCTC TTGAG 
+    GCTTT TATGA CCTTT ATAAG 
+    ACCAT CATGA CCTTT ATAAT 
+    ```
 
 14. In forensic applications of genetics,if the DNA fingerprint taken from a crime-scene sample and that of a suspect do not match,the confidence one has in the conclusion is much greater than if the DNA fingerprints do match. What conclusion would be drawn,and why can one have confidence in this conclusion?    
