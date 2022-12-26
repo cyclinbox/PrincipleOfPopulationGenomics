@@ -13,7 +13,11 @@ python make_indexpage.py
 cd ..  # then change back
 
 # First we need to deploy all html into `docs` directory
-cp -f src/*.html docs/
+for file in `ls src/|grep html`;do
+	sed -e 's/<meta charset="UTF-8">/<meta charset="UTF-8"><meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">/g' src/${file} > docs/${file}
+done
+
+#cp -f src/*.html docs/
 
 # Then make backup
 date=`date +%Y-%m-%d_%H%M%S`

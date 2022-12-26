@@ -835,15 +835,15 @@ $$
 
 15. To see how population admixture can cause linkage disequilibrium (even for genes in different chromosomes),consider the three situations in the accompanying table. Each example gives the gametic frequencies in two subpopulations,both of which are in linkage equilibrium for the alleles A,a and B,b of two genes. The gametic frequencies in the two populations are denoted P1 and P2 with appropriate subscripts for the alleles in the gametes. For each example,verify the absence of linkage disequilibrium in each original subpopulation. Then assume that the  two subpopulations in each example undergo admixture in equal proportions,and calculate the values of $D'$ and $r^2$ in the resulting admixed population.
 
-|Example|(a)|(b)|(c)|
-|-------|---|---|---|
-|$P1_{AB}$ |0.0734|0.7220|0.0277|
-|$P1_{Ab}$ |0.6860 | 0.0082 | 0.0628 |
-|$P1_{aB}$ |0.0232 | 0.2667 | 0.2786 |
-|$P1_{ab}$ |0.2174 | 0.0031 | 0.6309 |
-|$P2_{AB}$ |0.4082 | 0.0132 | 0.0281 |
-|$P2_{Ab}$ |0.3380 | 0.0621 | 0.2959 |
-|$P2_{aB}$ |0.1388 | 0.1622 | 0.0587 |
-|$P2_{ab}$ |0.1150 | 0.7625 | 0.6173 |  
+    |Example|(a)|(b)|(c)|
+    |-------|---|---|---|
+    |$P1_{AB}$ |0.0734|0.7220|0.0277|
+    |$P1_{Ab}$ |0.6860 | 0.0082 | 0.0628 |
+    |$P1_{aB}$ |0.0232 | 0.2667 | 0.2786 |
+    |$P1_{ab}$ |0.2174 | 0.0031 | 0.6309 |
+    |$P2_{AB}$ |0.4082 | 0.0132 | 0.0281 |
+    |$P2_{Ab}$ |0.3380 | 0.0621 | 0.2959 |
+    |$P2_{aB}$ |0.1388 | 0.1622 | 0.0587 |
+    |$P2_{ab}$ |0.1150 | 0.7625 | 0.6173 |  
 
 
