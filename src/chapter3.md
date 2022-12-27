@@ -549,6 +549,54 @@ $$
 
 当 $1/(2N)$ 很小时，指数函数是一个非常好的近似。上面的这个概率分布的均值为 $2N$ 世代，方差为 $4N^2$ 。注意，平均时间附近的置信区间不是很紧，因为分布的标准差（ $2N$ ）等于均值。
 
+回到我们的包含 $k$ 个等位基因的样本。这 $k$ 个等位基因在 $t$ 代以前没有发生溯祖事件、并且在 $t+1$ 代前恰好发生一次溯祖事件剩下 $k-1$ 个等位基因的概率为：
+
+$$
+\begin{aligned}
+    &=\text{Pr}(k)^t[1-\text{Pr}(k)] \\
+    &\approx \frac{C_k^2}{2N}\text{exp}[-\frac{C_k^2}{2N}t] \tag{3.35}
+\end{aligned}
+$$
+
+当 $k<<N$ 时（也就是说，样本规模远小于群体规模，这常常是实际情况），上面的近似是有效的。等式（3.35）中的概率分布的均值和方差如下：
+
+$$
+均值=\frac{4N}{k(k-1)} 世代 \\
+方差=\frac{16N^2}{[k(k-1)]^2} 世代^2 \tag{3.36}
+$$
+
+Felsenstein在他的《推断系统进化论》（ *Inferring Phylogenies* ，2004）一书中，为溯祖过程提供了一个绝妙的“盒中之虫”（bugs-in-a-box）类比，使其变得简单而难忘，我们在他的允许下引用了这一类比：
+
+> We can make a physical analogy (if a somewhat fanciful one)by considering a box containing hyperactive, indiscriminate,voracious,and insatiable bugs. We put k bugs into the box. They run about without paying any attention to where they are going.Occasionally two bugs collide. When they do,one instantly eats the other.Being insatiable,it then resumes running as quickly as before. It is obvious that the number of bugs falls from k to k-1,to k-2,as the bugs coalesce,until finally only one bug is left. ... The analogy is actually fairly precise.The number of pairs of bugs that can collide is k(k-1)/2. If there are 2N "places"in the box that can be occupied,the probability of a collision will be proportional to k(k-1)/4N. The size of the population corresponds to the size of the box. A box with twice as many "places"will slow the coalescence process down by a factor of two. So a simpleminded physical analysis of the bugs-in-a-box process will have the Kingman coalescent [our Equation 3.35] as the probability distribution of its outcomes. (p. 460)  \
+> 我们可以通过考虑一个盒子来做一个物理类比（如果有点异想天开的话），这个盒子里有极度活跃、不分青红皂白、贪婪和贪得无厌的虫子。我们把k个虫子放进盒子里。它们到处乱跑，根本不在乎它们要去哪里。偶尔会有两个虫子发生碰撞。当它们发生碰撞时，一个会立即吃掉另一个。由于这些虫子太过贪得无厌，它会像以前一样快速地恢复乱跑。很明显，当虫子合并时，虫子的总体数量从k下降到k-1，再下降到k-2，直到最后只剩下一个虫子……这个类比实际上相当精确。可以碰撞的虫子的对数是k(k-1)/2。如果盒子中有2N个“位置”可以被占用，碰撞的概率将与k(k-1)/4N成正比。群体的大小与盒子的大小相对应。一个“位置”为两倍的盒子将使合并过程（溯祖过程，coalescence process）减慢两倍。因此，对盒中之虫的过程进行简单的物理分析，就会得到和Kingman溯祖过程[ 见我们的方程（3.35） ]一样的结果作为其概率分布。（原书第460页）
+
+图3.15显示了五个等位基因（ $k=5$ ）的情况下的基因谱系。谱系以两种形式描述，这两种形式在文献中都很常见。在右侧，每条线的末端表示原始样本中的一个等位基因，沿着线条向上移动（时间上向过去回溯），每个节点（顶点）表示两个基因谱系发生一次溯祖事件，到达一个祖先等位基因。在左侧，线条的末端依然表示采样到的等位基因，但现在每个溯祖事件都表示为一条水平线。在时间上向过去回溯（从下往上）， $i$ 个等位基因合并为 $i-1$ 个等位基因的溯祖时间用 $T_i$ 表示（ $i=2$ 到 $5$ ）。这些溯祖时间的概率分布由方程（3.35）给出，期望值如图3.15所示。从五个等位基因开始，第一次溯祖预计在 $2N/10$ 代前发生，下一次在 $2N/6$ 代之前发生，依此类推。每个时间间隔的分布都是指数型的，随着时间向过去的回溯，时间间隔将不断增长。
+
+![](asset/fig3.15.png)
+
+注意，随着时间向过去的回溯，溯祖时间越变越长，最后一次溯祖事件（从2个等位基因到1个）的时间最长。这是恒定大小群体中的典型溯祖模式。从数量上讲，对于 $k$ 个等位基因中最后 $n$ 个等位基因，它需要总时长的 $(1-1/n)/(1-1/k)$ 部分的时间才能完成溯祖【译者按：  $0<(1-1/n)/(1-1/k)\le 1$ 】 （Felsenstein 2004）。从这个关系很容易看出，如果 $k$ 相当大（例如 $k\ge 10$），则最后两个等位基因的溯祖将需要几乎一半的总时间（ $n=2$ ）。
+
+对于 $k$ 个等位基因的样本，所有等位基因的溯祖时间（即， $k$ 个等位基因样本共享共同祖先的最近时间）为
+
+$$
+t=4N(1-\frac{1}{k}) \tag{3.37}
+$$
+
+其方差为
+
+$$
+V=4N^2\prod_{i=2}^k\frac{1}{(C_i^2)^2} \tag{3.38}
+$$
+
+（Kingman 1982a，b；Tajima 1983）
+
+随着样本量 $k$ 逐渐向总群体规模增加， $t$ 接近 $4N$ ，这等于新出现的、最终会被固定的中性突变所需的期望固定时间。
+
+样本的最近共同祖先（即所有谱系通过溯祖最终达到的等位基因）同时也是整个群体中所有等位基因的最近共同始祖的概率是多少？答案是由比率 $(k-1)/(k+2)$ 给出（Rosenberg和Nordborg 2002）。即使 $k$ 值相对较小，这个概率也惊人地大。例如， $k=5$ 时，这个比例已经是 $67\%$， $k=9$ 时，它是 $80\%$ ，最后 $k=19$ 时，它是 $90\%$ 。换句话说，对于一个只有19个等位基因的样本，溯祖得到的最近的共同祖先有 $90\%$ 的几率正是整个群体中所有等位基因的最近共同祖先，无论群体规模是五百、一千还是一百万。
+
+
+
+
 
 
 
