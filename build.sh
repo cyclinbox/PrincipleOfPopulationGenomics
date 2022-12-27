@@ -14,7 +14,9 @@ cd ..  # then change back
 
 # First we need to deploy all html into `docs` directory
 for file in `ls src/|grep html`;do
-	sed -e 's/<meta charset="UTF-8">/<meta charset="UTF-8"><meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">/g' src/${file} > docs/${file}
+	sed -e 's/<meta charset="UTF-8">/<meta charset="UTF-8"><meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">/g' src/${file} | 	\
+	sed -e 's/<meta charset="UTF-8">/<script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https:\/\/hm.baidu.com\/hm.js?8fd7869a3d296e620f31f7541dec4e7f";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();<\/script>/g' \
+	> docs/${file}
 done
 
 #cp -f src/*.html docs/
