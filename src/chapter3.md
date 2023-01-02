@@ -4,7 +4,29 @@
 
 <div style="position:fixed;height:20px;right:50px;bottom:80px;background-color:#ddd;color:#069;padding:5px;border-radius:20px;box-shadow:0px 0px 4px #aaa;cursor:pointer;" onclick="javascript:window.location.href='#top'"><i class="fa fa-arrow-up"></i><b> 返回顶部 </b></div>
 
-
+- [第3章 随机遗传漂变](#第3章-随机遗传漂变)
+  - [3.1 随机遗传漂变和二项抽样](#31-随机遗传漂变和二项抽样)
+  - [3.2 随机遗传漂变的Wright-Fisher模型](#32-随机遗传漂变的wright-fisher模型)
+  - [3.3 扩散近似（the diffusion approximation）](#33-扩散近似the-diffusion-approximation)
+    - [一种前向方法](#一种前向方法)
+    - [一种后向方法](#一种后向方法)
+    - [吸收时间和达到固定状态的时间](#吸收时间和达到固定状态的时间)
+  - [3.4 细分群体中的随机漂变](#34-细分群体中的随机漂变)
+  - [3.5 有效群体大小](#35-有效群体大小)
+    - [群体规模的波动](#群体规模的波动)
+    - [不等性比，性染色体，细胞器基因](#不等性比性染色体细胞器基因)
+    - [后代数量的方差](#后代数量的方差)
+    - [细分群体的有效群体大小](#细分群体的有效群体大小)
+  - [3.6 基因树和溯祖事件](#36-基因树和溯祖事件)
+    - [溯祖有效大小](#溯祖有效大小)
+    - [伴随群体扩张的溯祖事件](#伴随群体扩张的溯祖事件)
+    - [伴随突变的溯祖模型](#伴随突变的溯祖模型)
+    - [溯祖方法的应用](#溯祖方法的应用)
+  - [3.7 溯祖的理论意义](#37-溯祖的理论意义)
+    - [伴随重组的溯祖模型](#伴随重组的溯祖模型)
+    - [连锁不平衡映射](#连锁不平衡映射)
+  - [本章小结](#本章小结)
+  - [课后习题](#课后习题)
 
 
 在每一个生物体中，形成的配子数量都远远超过了可存活后代的数量。这是达尔文自然选择理论的原理之一。哪一个特定的配子存活，哪一个死亡，一定程度上由偶然性决定：抽签的运气。随机因素意味着，偶然因素本身就可以改变一代又一代的等位基因频率。因为这样的采样过程不会以任何预定的方式改变等位基因频率，所以这个过程被称为 **随机遗传漂变（random genetic drift）** 。随机遗传漂变的微妙性和重要性是本章的主题。
@@ -127,7 +149,7 @@ Wright Fisher模型和Moran模型都包含了随机遗传漂变的一个重要�
 
 -------------------
 
-## 3.3 扩散近似
+## 3.3 扩散近似（the diffusion approximation）
 
 图3.4所示的等位基因频率变化模式与理想群体的理论预期非常接近，如图3.5所示。该分布是通过矩阵的连续乘法获得的，矩阵的元素由方程（3.2）中的转移概率给出。尽管全面的随机遗传漂变理论涉及的数学知识超出了本书范围（参见Kimura 1955，1964，1976；Wright 1969；Crow和Kimura 1970；Kimura和Ohta 1971；Ewens 2004），但在下一节中，我们提供了一个介绍性的花絮以让读者们浅尝一下。如果你是一个没有微积分背景的学生，这些讨论可能显得有些难以理解，但请不要气馁，因为对这一部分的理解与否并不影响对本章的其余部分或本书后面的任何内容的理解。
 
@@ -423,6 +445,8 @@ $$
 
 使用方程（3.22），我们得到 $1/N_e=(\frac{1}{3})(\frac{1}{1000}+\frac{1}{10}+\frac{1}{1000})=0.034$ ，或 $N_e=29.4$ 。三代群体的平均有效数量仅为29.4，而这三代群体规模的算数平均值则是 $\frac{1}{3}(1000+10+1000)=670$ 。
 
+-----------------
+
 ### 不等性比，性染色体，细胞器基因
 
 第二个重要的例子是，可以很容易地计算出非理想群体的有效群体大小，这涉及到性别比例不平衡的有性生物的群体。这种不平衡造成了一种特殊的瓶颈；因为任何一代中一半的等位基因都必须来自两种性别之一，任何偏离了平衡状态的性别比例都会增加随机遗传漂变的机会。这种情况在野生动物管理中很重要，因为对于许多狩猎动物（例如野鸡和鹿）来说，雄性的法定捕猎数量限制要比雌性大得多。尽管一些管理目标得到了此类狩猎法规的支持（例如，所涉及的物种通常是一夫多妻制的，因此一只雄性可以使许多雌性受精，总体实际种群规模可以保持），但必须记住，由此产生的性别比例不平衡会降低有效群体大小。具体而言，如果一个有性生物组成的群体包括 $N_m$ 个雄性和 $N_f$ 个雌性，则群体的实际大小为
@@ -673,11 +697,6 @@ $$
 
 其中 $\theta=4N\mu$ 。这是无限位点模型中的分离位点个数的期望值，我们将在第四章中在不同的背景下对其再次进行讨论。注意， $\mu$ 并不是每个核苷酸位点的突变率，而是整条DNA序列上的整体突变率。
 
-// 以下未翻译
-
-作为溯祖方法的理论应用的另一个例子，考虑
-
-
 作为溯祖方法理论实用性的另一个例子，考虑从当前处于突变和随机遗传漂变的平衡状态的群体中抽样到的等位基因样本。群体处于突变和随机遗传漂变的平衡状态，意味着每一代中新突变的发生率与随机遗传漂变导致的旧突变的丢失速率相同。追踪任意一对等位基因在前一代中的历史，这对等位基因可能发生溯祖事件，概率为 $1/(2N)$ ，或者未能发生溯祖事件，一个或另一个等位基因发生了概率为 $2\mu$ 的突变（这里的数学因子2是必要的，因为两个等位基因中的任何一个都可能发生突变）。这些是唯二的影响等位基因血缘同源性的事件，它们的概率之和是 $1/(2N)+2\mu$ 。因此，血缘同源的概率（ $F$ ）是等位基因溯祖时间的分数，或者
 
 $$
@@ -723,19 +742,58 @@ $$
 
 如何解决图3.17中树（A）和树（B）之间的不一致？传统的解决方法如树（C）（Hudson 1990）所示。在这种情况下，由于每个染色体的祖先都可以在时间上追溯，当两个染色体结合在一起时，两个事件中的任何一个都可能发生：染色体要么（1）发生重组，要么（2）发生溯祖事件。在树（C）中，箭头标记了重组事件，这是通过重组染色体重建其祖先亲本类型来描述的。类似C中的图被称为样本中单倍型的 *祖先重组图（the ancestral recombination graph）* 。
 
-
 允许在每个节点进行重组或合并的想法，解决了树中的不一致性，但同时也暴露出了过程的复杂性。只有在最简单的情况下才可能得到分析结果（Hudson 1990，2001）。模拟是一种替代性的方法，但假设你被派去模拟一个DNA区域的祖先历史，其中包含50个互相之间可以发生重组的分离位点，直觉上你会意识到这项任务是可怕的。你必须生成一个祖先历史，在序列中的位点上撒上突变的分支，决定哪些节点会导致溯祖事件，哪些会导致重组，并跟踪突变和重组事件在序列中发生的位置。因此，模拟产生了溯祖树，其元素为一维图。
 
 尽管它很复杂，然而对伴随重组的溯祖过程的模拟存在其可能性。问题是，随机生成的溯祖树甚至不太可能产生一个具有类似于实际样本的连锁不平衡等特征的等位基因模拟样本。这个问题可以用多种方式解决。一种方法是忽略溯祖事件，并根据样本本身的各种特征来估计重组率。正如突变的相关参数是 $4N\mu$ 一样，重组的相关参数也是 $4Nr$ ，其中 $N$ 是有效群体大小， $r$ 是每代的重组率。 $4Nr$ 的一个估计是基于比较所有可能的等位基因对中的样本等位基因，并为每对等位基因列出核苷酸错配的数量。成对错配的概率分布是估计重组率的基础，因为错配数量的方差通过重组而减少（Wakeley 1997）。这一点可以通过比较由AB, AB, ab, ab组成的样本中的错配数量的概率分布与由AB, Ab, aB, ab组成的样本中的错配数量的分布来理解，其中后一个样本代表重组。在两个样本中，成对错配的平均数量为1.33，但方差分别为0.89和0.22。这种方法的优点是它是完全直接的；主要的限制是它没有使用样本中的所有信息，因此具有比必要的更大的采样方差。
 
 与使用汇总统计相反的方法是进行大量模拟，以执行方程（3.39）中所述的完全似然分析。正如我们所提到的，这种方法的问题是随机模拟极不可能接近实际数据。参数空间如此之大，以至于除了在简单的情况下，全面的似然方法需要的计算能力甚至超过最强大的计算机系统的计算能力。这个问题刺激了一些方法的实施，这些方法通过将完整的数据集折叠成汇总统计数据，并且通过将最相关的参数空间部分归零。近似贝叶斯溯祖方法（Approximate Bayesian coalescence methods）将观察到的数据折叠为汇总统计数据，例如不同单倍型的数量或序列对之间的平均失配数量。对于每个模拟的溯祖树，计算相同的汇总统计数据。如果观测数据和模拟样本之间的差异足够小（基于某种程度上任意选取的阈值），则接受模拟样本中的参数。多次重复模拟样本产生所谓的参数估计 *后验分布（posterior distribution）* 。
 
+两种广泛使用的方法是 *马尔可夫链蒙特卡罗模拟* （ *Markov Chain Monte Carlo，MCMC* ）和 *序贯重要性采样* （ *sequential importance sampling* ），它们避免了对参数值的随机猜测，而是使计算机能够在参数空间的“最有希望”的区域花费更多时间。即使是这些方法也面临着当前可用数据集的巨大规模的挑战。这两种方法都需要数据和模型之间拟合优度的标准，这本身有时很难计算。有时使用 *复合似然度（composite likelihood）* 来代替计算全似然度，这种方法首先解决了一个更简单的问题，即计算每个独立核苷酸位点的似然值，然后将总体似然值作为一组核苷酸的似然值的乘积进行计算（Kim和Stephan 2000；Hudson 2001；McVean等人2002；Zhu和Bustamante 2005；Carvajal Rodriguez等人2006）。这种方法假设核苷酸位点互相之间具有统计独立性——这一假设很难证明——但在实践中，该方法的表现似乎比预期的要好得多。
 
-// 以下未翻译
+### 连锁不平衡映射
 
-两种广泛使用的方法是马尔可夫链蒙特卡罗（MCMC），它们避免了对参数值的随机猜测，反而使计算机能够在参数空间的“最有希望”区域花费更多时间和顺序重要性抽样。即使是这些方法也面临着当前可用数据集的巨大规模的挑战。这两种方法都需要数据和模型之间拟合优度的标准，这本身有时很难计算。有时使用复合似然度来代替计算全似然度，其中解决了计算每个单个核苷酸位点的可能性的更简单的问题，然后将总体似然性作为一组核苷酸的似然性的乘积（Kim和Stephan 2000；Hudson 2001；McVean等人2002；Zhu和Bustamante 2005；Carvajal Rodriguez等人2006）。该方法假设核苷酸位点的统计独立性，这一假设很难证明，但在实践中，该方法为它的表现似乎比预期的要好得多。
+伴随重组的溯祖分析很重要，因为了解突变、重组和随机漂变同时作用的后果是使用人类样本推断多因素遗传疾病（如高血压、糖尿病和精神分裂症）遗传风险因素的核心（见第10章）。一个基本的原理是，在有限的群体中，突变、重组和随机漂移的过程会导致 *连锁不平衡（linkage disequilibrium）* ，即染色体上等位基因的非随机关联，我们已经在第2章中对非常大（理论上无限）的群体进行了研究。
 
+![](asset/fig3.18.png)
 
+我们将在第9章对突变、重组和随机遗传漂变情况下连锁不平衡的定量进行详细讨论，这里只简单提供一些结论。主要结论总结在图3.18中，它们显示了两个遗传标记（例如SNPs）之间的期望连锁不平衡的大小（ $E(r^2)$ ）是两个遗传标记间重组百分比和有效群体大小（ $N_e$ ）的函数。粗略地说，在人类基因组中，1%的重组率对应于大约1Mb的DNA，我们基于这条经验法则绘制了图中顶部的以kb为单位的刻度。你或许可以从第二章中回忆到，连锁不平衡的度量 $r^2$ 具有直观的含义，即其平方根（即 $\sqrt{r^2}$ ）是单个染染色体上的等位基因之间的相关系数。因此， $r^2=0.2$ 表示相关系数为 $\sqrt{0.2}=0.45$ ，这是相当大的。图3.18中绘制的许多值的 $r^2=0.2$ 。即使 $N_e$ 大如1000，对于100 kb的SNPs，平衡 $r^2$ 也期望大于0.2。这一推理表明，人类基因组可能在至少几十kb的数量级的区域之间表现出显著的连锁不平衡，国际人类基因组图联盟（The International HapMap Consortium）（2005年）证实了这一预期。
+
+SNPs与具有遗传成分的复杂疾病之间的关联分析称为 **连锁不平衡映射（linkage disequilibrium mapping）** 。这一方法将在第10章中进行详细研究。其目标是识别处于疾病易感的突变等位基因中或在其附近的独立SNP。这些突变等位基因被称为该疾病的 *遗传风险因素（genetic risk factor）* ，关联性的度量是连锁不平衡的大小。本质上，此类研究检查了大量受影响的个体（ *病例，cases* ）和对应的同样数量的非受影响个体（ *对照，controls* ）。对这些个体进行了全基因组数十万个SNP的基因分型，并确定了在受影响个体中比在未受影响的对照中更频繁发现的SNP（对于如此大量的统计测试，第2章中讨论的假阳性和假发现问题变得至关重要）。独立研究中显著相关且可重复的SNPs被认为标记了遗传风险因素的基因组位置。任何遗传风险因素都可能与多个附近的SNPs表现出连锁不平衡，因为与遗传风险因素相关的SNP的系谱树也是相关的。在这些基因中搜索能够提供病例和对照的最佳分离的系谱树对应的SNP，这提供了风险因素的更精细的遗传分辨率。这些应用是伴随重组的溯祖模型成为现代群体遗传学中最活跃的研究领域之一的部分原因。
+
+## 本章小结
+
+1. 由于每代配子的随机抽样，有限群体中的等位基因频率以 $pq/(2N)$ 的理论方差波动。这些等位基因的频率波动是随机遗传漂变的基础。
+2. Wright-Fisher模型将二项抽样的概念扩展到多代，并暗示对于一个理想群体，其中作用于等位基因频率的唯一力量是随机遗传漂变，则一个等位基因经过漂变达到固定的概率等于其在群体中的初始频率。
+3. 当规定了亚群中的初始等位基因频率时，Wright-Fisher模型的扩散近似使用了二阶偏微分方程来计算在任何给定时间亚群中等位基因的频率分布。扩散方法对于随机漂变的结果产生了许多重要见解，例如，对于一个注定要固定的新的中性突变，其固定的预期时间是 $4N$ 代。
+4. 考虑随机漂变的一个有用方法是考虑一组相同大小的亚群，这些亚群经历了重复的世代抽样和漂变。在每个亚群中，基因型都是通过随机抽取等位基因而构成的，因此每个亚群总是处于哈迪-温伯格平衡。将所有亚群的基因型频率进行平均，我们发现总群体中的杂合基因型的频率低于HWE预期的频率，且总群体的杂合性以每代平均 $1/(2N)$ 的速率降低。
+5. 真实的生物种群通常不符合Wright-Fisher模型，因为等位基因频率的变化比基于实际群体规模的预期情况更快。通过计算有效群体大小 $N_e$ ，可以使漂变模型更好地符合实际情况，其中有效群体大小的计算考虑了性别比例、后代数量的方差、世代之间群体规模的波动或群体细分。在某些情况下，有效群体大小可能大于实际群体数量。
+6. 通过考虑等位基因的系谱历史，随机漂移的许多方面都得到了极大的简化。从时间上向过去看，等位基因谱系在某个时间点聚集在一起（溯祖事件），在这个时间点上，两个等位基因由单个祖先等位基因复制而来。
+7. 溯祖时间的分布是指数型的，这使得溯祖树的计算机模拟非常容易实现，从而产生在任何特定模型下进化的群体样本中预期的特征。这些模拟样本可以与实际数据进行比较，以检验假设或估计群体参数。
+8. 突变、重组和随机漂变的共同作用导致某种稳态，在这种稳态下连锁不平衡的大小是重组率和有效群体大小的函数。在人类群体中，连锁不平衡为基于连锁不平衡映射的疾病风险因素研究提供了可能。
+
+## 课后习题
+
+1. Describe the Wright-Fisher model of random genetic drift. The elements $T_{ij}$ of the transition matrix are probabilities. How should $T_{ij}$ be interpreted? 
+2. Explain how the basic concept behind the Kolmogorov forward equation differs from that underlying the Kolmogorov backward equation. 
+3. Explain why, in any population model in which random genetic drift plays a role, "backward" computer simulation, which starts with the alleles present in the current population and traces their coalescence backward in time, is computationally much simpler than "forward" simulation, which starts with the alleles present in the original population and simulates random genetic drift moving forward in time.  
+4. In an ideal diploid population of size 50,what is the probability that a neutral allele present in exactly one copy will be lost in the next generation?What is the answer if the allele is present in two copies? 
+5. Suppose that a diploid population of size 50 undergoes a change in average heterozygosity across loci from 0.50 to 0.42 in a single generation. Is it plausible to attribute this magnitude of change to random drift alone? 
+6. How many generations of random genetic drift are required to reduce the expected heterozygosity to 5% of its initial value in a diploid randomly mating population of size 10? Of size 50? 
+7. An autosomal gene in a colony of 28 Asian wild mice, *Mus castaneus* , undergoes mutation to a new neutral allele. Assuming that the population conforms to the Wright-Fisher model,what is the probability that the allele eventually becomes fixed? What is the probability that it eventually becomes lost? What is the average time to loss,given that the allele is eventually lost. What is the average time to fixation,given that it is eventually fixed?
+8. What are the answers to Problem 3.7 if the mutant gene is X-linked and the population consists of equal numbers of males and females? What if the gene is Y-linked? 
+9. An isolated population of apine edelweiss ( *Leontopodium alpinum* )loses half its heterozygosity in 30 generations. What is its effective population size? 
+10. Remote Pitcairn Island in the South Pacific was settled in 1789 by Fletcher Christian and eight fellow mutineers from *HMS Bounty* , along with a small number of Polynesian women. Although many descendants have left the island in the intervening years, there has been essentially no immigration. Assuming an effective size of 20 in each of the eight generations since the island's settlement, what value of $F_t$ would be expected in today's population from random genetic drift? 
+11. Show that random genetic drift requires an average of $t=2N\text{ln}(x)$ generations to reduce the expected heterozygosity from $H_0$ to $H_0/x$ . 
+12. A large randomly mating diploid population with two neutral alleles A and a at allele frequencies $p_0=\frac{1}{3}$ and  $q_0=\frac{2}{3}$ ,respectively,splits into a large number of isolated subpopulations each of effective size 50. Within each subpopulation mating is random, but the allele frequencies diverge due to random genetic drift. After 69 generations,what are the expected genotype frequencies of AA,Aa,and aa,averaged across the subpopulations? In one of the subpopulations,the allele frequency of A equals 0.3. What are the expected genotype frequencies in this individual subpopulation?  
+13. Two inbred strains of the azuki bean beetle *Callosobruchus chinensis* are crossed and their progeny allowed to mate at random each generation thereafter. Among 100 single-nucleotide polymorphisms differing in the original inbred strains,what number would be expected to remain segregating after 10 generations,assuming an effective population size of 80 individuals How many would be expected to remain unfixed after 50 generations? 
+14. Use Equation 3.14 to show that approximately $2N$ generations of random genetic drift are required to reduce the number of segregating genes by a factor of $e$ ( $e=2.71828...$ ) given initial allele frequencies close to 0.5. 
+15. What is the effective population number in a population of African lions, *Panthera leo* ,in which each breeding male controls a harem of five females and the total population consists of 200 males and 200 females? 
+16. What is the effective population size of a herd of 10 dairy cows and 1 bull?What is it for 40 cows and 1 bull? For 10 cows and 2 bulls? 
+17. What is the variance effective population size for an X-linked gene in a population consisting of 100 females and 10 males?In a population of 10 females and 100 males? 
+18. In a haploid population of constant effective size 50,what is the probability that two randomly drawn alleles shared a common ancestor exactly 100 generations ago? 
+19. In a population of effective size 30,how many generations are required on the average to coalesce from 4 alleles to 3?From 3 alleles to 2? From 2 alleles to 1? 
+20. In a haploid population of effective size 50, how many sequences $k$ should be present in a sample for the first coalescence to have an average time of 10 generations. 
+21. In the infinite-sites model, if $\theta=10$ , how many segregating sites are expected in a sample of size 10? 20? 50?  
 
 
 
