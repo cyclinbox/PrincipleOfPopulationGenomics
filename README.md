@@ -22,7 +22,8 @@
 
 所有章节内容的html文档使用VS Code的[Markdown All in One](https://github.com/yzhang-gh/vscode-markdown/)插件进行编译。
 
-根目录下的`build.sh`是一个自动化处理的脚本，主要用于（1）`index.html`的生成；（2）`docs`目录的更新；（3）备份文件的生成。读者朋友可以不用理会这个脚本，直接访问[docs目录](https://cyclinbox.github.io/PrincipleOfPopulationGenomics/)即可。
+根目录下的`build.sh`是一个自动化处理的脚本，主要用于（1）`index.html`的生成；（2）`docs`目录的更新；（3）备份文件的生成。另一个脚本`deploy.sh`则用于自动化提交更新到Github存储库当中。读者朋友可以不用理会这两个脚本，直接访问[docs目录](https://cyclinbox.github.io/PrincipleOfPopulationGenomics/)即可。
+
 
 ## 其他补充信息
 
@@ -43,3 +44,5 @@
 2022-12-23 添加 `.gitignore` 文件
 
 2022-12-26 优化了部分html代码
+
+2023-04-24 添加`deploy.sh`脚本文件
