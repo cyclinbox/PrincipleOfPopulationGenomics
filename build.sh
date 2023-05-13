@@ -20,7 +20,8 @@ for file in `ls src/|grep html`;do
 done
 
 # ...and copy `asset` directory to `docs`
-cp -ruv src/asset/ docs/asset/
+#cp -ruv src/asset/ docs/asset/
+cp -ruv src/asset/ docs/
 
 #cp -f src/*.html docs/
 
