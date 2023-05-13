@@ -3,9 +3,9 @@
 # modified on 2023-4-24.
 # depended on `build.sh`
 
-COMIT=`date +%Y-%m-%d`:$1
+COMIT=`date +%Y-%m-%d`:"some edit"."$1"
 ./build.sh
 git add *
-git commit -m $COMIT
+git commit -m "$COMIT"
 git push -u origin main
 
