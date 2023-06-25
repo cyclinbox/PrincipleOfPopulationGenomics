@@ -4,6 +4,27 @@
 
 <div style="position:fixed;height:20px;right:50px;bottom:80px;background-color:#ddd;color:#069;padding:5px;border-radius:20px;box-shadow:0px 0px 4px #aaa;cursor:pointer;" onclick="javascript:window.location.href='#top'"><i class="fa fa-arrow-up"></i><b> 返回顶部 </b></div>
 
+- [第4章 突变与中性理论](#第4章-突变与中性理论)
+  - [4.1 突变](#41-突变)
+    - [不可逆突变](#不可逆突变)
+    - [可逆突变](#可逆突变)
+  - [4.2 突变和随机遗传漂变](#42-突变和随机遗传漂变)
+    - [一个新的中性突变固定的概率](#一个新的中性突变固定的概率)
+  - [4.3 分子进化的中性理论](#43-分子进化的中性理论)
+  - [4.4 无限等位基因模型](#44-无限等位基因模型)
+    - [Ewens抽样公式](#ewens抽样公式)
+    - [Ewens-Watterson 检验](#ewens-watterson-检验)
+  - [4.5 无限位点模型](#45-无限位点模型)
+    - [核苷酸多态性和核苷酸多样性](#核苷酸多态性和核苷酸多样性)
+    - [Tajima'D 统计量](#tajimad-统计量)
+    - [适合中性溯祖过程的Fu and Li检验](#适合中性溯祖过程的fu-and-li检验)
+  - [4.6 突变与重组](#46-突变与重组)
+    - [一个重组进化效益模型](#一个重组进化效益模型)
+    - [穆勒棘轮效应（Muller's Ratchet）](#穆勒棘轮效应mullers-ratchet)
+    - [细菌中的分段重组（Piecewise Recombination in Bacteria）](#细菌中的分段重组piecewise-recombination-in-bacteria)
+    - [动物线粒体DNA](#动物线粒体dna)
+  - [本章小结](#本章小结)
+  - [课后习题](#课后习题)
 
 
 几个过程可以在群体中产生新类型的遗传变异，或促进基因组内或亚群体之间先前存在的变异的重组。遗传变异的最终来源是 **突变（mutation）** ，这里指的是遗传物质中的任何可遗传变化。因此，突变包括单个基因的核苷酸序列的改变以及染色体重排的形成，如倒位与易位。重组将不同基因上发生的突变带到了同一条染色体上，而迁移使突变能够在亚群中传播。 **转座子（transposable element）** 是一种DNA序列，能够复制并插入基因组中的大量位点之中。通过插入到基因内部或基因附近，转座子可以改变基因表达水平或表达模式，而转座子之间的重组可以导致染色体重排，例如，染色体的倒位。在本章中，我们考虑了遗传变异的产生过程，并研究了自然群体中突变的期望命运。
@@ -14,7 +35,7 @@
 
 ### 不可逆突变
 
-尽管突变可能会产生一个新的等位基因，但当群体规模较大时，突变等位基因的初始频率必须非常低。具体而言，在一个群体规模为 $N$ 的二倍体生物群体中的单个新突变等位蛋白的初始频率为 $1/(2N)$ 。后代中的新突变可能会增加突变等位的数量，但是独立发生的反复突变对突变等位基因频率增加的速率非常缓慢。考虑一个具体的例子，其中A是野生型等位基因，a是突变体形式。如果每一代正好有一个新的突变，并且忽略了随机遗传漂变，那么a的等位频率会以数列 $1/(2N),\ 2/(2N),\ 3/(2N)...$ 而增加。并且，如果 $N$ 非常大（例如， $N=10^6$ ），那么等位基因增加的速率确实非常缓慢。因此，由于反复突变（ **突变压力，mutation pressure** ），等位基因频率发生变化的趋势非常小。另一方面，长时间内突变的累积效应可以变得明显。
+尽管突变可能会产生一个新的等位基因，但当群体规模较大时，突变等位基因的初始频率必须非常低。具体而言，在一个群体规模为 $N$ 的二倍体生物群体中的单个新突变等位蛋白的初始频率为 $1/(2N)$ 。后代中的新突变可能会增加突变等位的数量，但是独立发生的反复突变（recurrent mutation）对突变等位基因频率增加的速率非常缓慢。考虑一个具体的例子，其中A是野生型等位基因，a是突变体形式。如果每一代正好有一个新的突变，并且忽略了随机遗传漂变，那么a的等位频率会以数列 $1/(2N),\ 2/(2N),\ 3/(2N)...$ 而增加。并且，如果 $N$ 非常大（例如， $N=10^6$ ），那么等位基因增加的速率确实非常缓慢。因此，由于反复突变（ **突变压力，mutation pressure** ），等位基因频率发生变化的趋势非常小。另一方面，长时间内突变的累积效应可以变得明显。
 
 对于突变研究来说，一个有用的模型是第2章的哈迪-温伯格模型，但与第2章中不同的是这里我们允许突变的存在。这里，我们关注的突变是对生物体生存和繁殖能力影响很小的突变，因此自然选择不会明显影响其频率。我们还将假设突变是 *不可逆的（irreversible）* ，这意味着a不能回复突变为A。为了避免因偶然因素导致等位基因频率变化而造成的结果的复杂性，我们还将假定群体是无限大的。
 
@@ -502,8 +523,117 @@ Fisher-Muller模型中重组的优势也受到群体规模的影响。在非常�
 
 ### 细菌中的分段重组（Piecewise Recombination in Bacteria）
 
+许多原核生物利用重组机制，将一段相对于整个基因组大小较小的DNA从供体细胞转移到受体细胞中（Redfield 2001）。这些机制包括 *转化（transformation）* ，其中游离DNA被受体细菌从周围培养基中吸收； *转导（transduction）* ，其中DNA片段通过病毒颗粒从供体细菌携带到受体细菌； *接合（conjugation）* ，即通过一个需要细胞间接触的渐进过程，将供体细菌的染色体副本转移到受体细菌，但染色体常常在转移完成前就发生断裂。由于基因组中相对较短的片段参与重组，上述这些过程在进化意义上与真核生物中的减数分裂重组不同。通过涉及可传播质粒（染色体外DNA元件）和转座元件的机制，细菌也可以从其他物种获得基因。尽管这些 **水平基因转移（lateral gene transfer）** 过程在对多种抗生素有耐药性的细菌的起源和传播中极其重要，但这些事情的每件事本身都是罕见的事件。通常，细菌之间的基因交换发生在同一物种的个体之间（Ochman等人，2005）。
+
+![](asset/fig4.17.png)
+
+短片段重组的主要作用是维持长距离连锁不平衡（long-range linkage disequilibrium，LRLD）。例如，在肠道细菌中，如属于正常肠道菌群一部分的 *大肠杆菌（Escherichia coli）* ，它们的等位酶基因座之间的连锁不平衡非常强烈（Whittam等人，1983）。然而，在DNA序列水平上，许多基因具有明显的镶嵌结构，其中不同的片段具有不同的系统发育史（DuBose等人，1988）。如图4.17所示，以编码大肠杆菌碱性磷酸酶的 *phoA* 基因为例，在图中所示的多态性核苷酸位点中，每个位点上与群体不同的独特核苷酸被标记在一个框中。在基因的最末端，来自菌株RM217T和RM45E的等位基因关系最密切；在基因的中间，从第1425到1560位的核苷酸位点上，一系列多态性核苷酸丢失了菌株RM217T和RM45E之间的相似性，好像该基因的这一部分是通过与一个较远的相关等位基因重组引入的。尽管相似或不同的核苷酸短序列也可能是偶然因素的结果，但通过对重组事件的适当统计检验可以排除偶然因素的效应（Stephens 1985；Sawyer 1989）。
+
+许多基因通过重组拥有了嵌合体祖先，这一发现起初似乎与更广阔尺度上的分离基因之间显著连锁不平衡的发现相矛盾。这个矛盾最终通过以下事实得到了解决：每个重组事件都在局部发生；重组取代了受体染色体上相对较短的一段，但同时保持了较远等位基因之间的连锁状态。因此， *大肠杆菌（E. coli）* 染色体由来自同一共同祖先的克隆片段即所谓 **克隆框架（clonal frame）** （Milkman和Bridges 1990，1993）组成，并被重组事件引入的、来自其他克隆的短片段所中断。即使打断克隆框架的只是一些相对较短的重组片段，这些克隆框架的完整性最终依然会丧失，除非偶尔发生的有利于特定基因型的选择性事件。克隆框架意味着基因组中的大多数基因将共享一个共同的基因树，也就是说它们是可以进行溯祖的（coalescence）。克隆框架的存在取决于重组的水平，因为高水平的重组会导致不同的基因拥有不同的溯祖历史。尽管 *大肠杆菌（E. coli）* 和 *流感嗜血杆菌（Hemophilus influenzae）* 等物种的基因树显示出良好的一致性（congruence），但来自 *脑膜炎奈瑟菌（Neisseria meningitidis）* 、 *肺炎链球菌（Streptococcus pneumoniae）* 、 *化脓性链球菌（Streptococcus pyogenes）* 和 *金黄色葡萄球菌（Staphylococcus aureus）* 的基因样本的基因树彼此之间的一致性并不比随机拓扑结构的树更好（Feil等人，2001）。
+
+### 动物线粒体DNA
+
+动物群体遗传学研究通常聚焦在线粒体DNA上。线粒体基因组提供了关于亲子关系的信息，因为在大多数动物中，它几乎总是母系遗传的，很少发生重组。它也是一种小分子，并且大量存在于大多数细胞中。在动物中，线粒体DNA（mtDNA）是一种圆形分子，通常长度在15-20kb之间。它编码的基因不到40个；大约一半编码用于线粒体蛋白质合成的核糖体RNA或转运RNA，其余基因编码用于电子传递或氧化磷酸化的蛋白。在包括哺乳动物在内的许多物种中，mtDNA序列的某些部分相比于核基因有着极快的进化速度，因此mtDNA通常可以用来推断群体结构和近期的群体历史。
+
+图4.18展示了mtDNA在群体研究中的一个应用，该图总结了在阿拉巴马州、佐治亚州和佛罗里达州收集的87只东南囊鼠（pocket gophers，学名 *Geomys pinetis* ） 的mtDNA检查结果（Avise等人，1979）。来自每只囊鼠的mtDNA依次用六种限制性酶消化，这六种酶在不同的六碱基识别位点切割DNA。通过电泳对限制性片段进行分离，并在动物个体之间进行比较，以估计影响限制性位点的差异核苷酸的数量。
+
+在87只囊鼠中，有23种不同类型的mtDNA，这些mtDNA类型在图4.18中以小写字母表示。每种mtDNA类型都代表一个母系mtDNA的谱系，各个谱系之间互不相同。共享相同mtDNA类型的动物个体必然有一个共同的雌性祖先。图4.18中的分支网络估计了mtDNA的母系系统发育。直线连接了相近类型的mtDNA，每条直线上的短横数量表示mtDNA类型之间限制性位点核苷酸差异的估计数量。较细的黑线圈出了相近mtDNA类型的群组；较粗的黑线则描绘了囊鼠的西部亚群和东部亚群，这两个亚群之间的总mtDNA序列差异估计在3%左右。在东部和西部亚群之间，限制性内切酶切割的位点之间存在9个核苷酸差异。
+
+图4.18中的mtDNA网络也解决了西部和东部亚群中的群体细分问题。这种细分是由较细的黑线限定的mtDNA类型所指示的。一些mtDNA类型，如“k”和“p”分布广泛，而其他类型如“b”和“g”的分布更为局限。在限制性内切酶切割的位点中，局部克隆与该地区分布最广泛的mtDNA类型通常仅存在一个或两个核苷酸的差异。图4.18中的例子表明，由于mtDNA的母系遗传和缺乏重组，mtDNA类型的分支网络可以在很大程度上揭示自然群体中的细分结构。
+
+在本节的开头，我们说动物的mtDNA“几乎总是母系遗传的，很少发生重组”。关于第一点，几乎没有争议，尽管似乎确实有一个人类男性从父亲那里遗传了mtDNA的案例（Bromham等人，2003）。重组的问题则更加悬而未决（Piganeau等人，2004年，Tsaousis等人，2005年）。由于平行突变（parallel mutation）、突变热点（hot spots of mutation）、选择（selection）、群体亚结构（population substructure）、测序错误（sequencing errors）和其他技术问题的可能影响，检测线粒体DNA序列中可能的罕见重组变得很复杂。还有大量用于重组的统计检验，每种检验都在某些假设下表现良好而在其他假设下则不（Bruen等人，2006）。
 
 
+因此，动物线粒体DNA重组的问题仍然悬而未决，它的下落对线粒体DNA的长期进化有影响。然而，从现有数据中可以清楚地看出，即使mtDNA能够发生重组，其规模也不足以影响到mtDNA作为遗传标记用于群体亚结构或者近期群体历史的能力。
+
+
+## 本章小结
+
+1. 突变是进化变化背后的遗传新颖性的最终来源，但对大多数基因来说，突变率通常很低，以至于突变压力是一种改变等位基因频率的微弱力量。
+2. 尽管突变压力很微弱，但在经历足够长时间的进化后，当等位基因频率的比率等于突变率比率的倒数时，群体可以在正向突变和反向突变之间达到平衡。
+3. 中性理论认为，许多突变对生物体的生存和繁殖影响如此之小，以至于它们的命运即使不是完全由随机遗传漂移决定，也主要受随机遗传漂变影响。在过去某个时期，当人们认为大多数DNA都编码蛋白质的时候，中性理论一度备受争议，但现在已经知道的大量非编码DNA存在于内含子、假基因、基因间区等区域中，这为中性或接近中性的突变提供了相当大的空间。
+4. 无限等位基因模型假设每个新突变在群体中产生一个独特的等位基因，并且它适用于在不知道实际DNA序列的情况下可以区分大量等位基因的情况。
+5. 在无限等位基因模型中，物理上无法区分的等位基因被认为是血缘同源的（identical by descent）。对于稳定状态下的中性突变，杂合基因型比例的期望值为 $\theta/(1+\theta)$ ，其中 $\theta=4N_e\mu$ 。
+6. Ewens抽样公式适用于在无限等位基因模型下处于稳定状态的群体样本中等位基因的预期配置。这一抽样公式允许基于理论预测和观测样本组成之间的比较来测试中性理论。
+7. 无限位点模型适用于DNA序列，并假设每个新突变都会改变单个核苷酸位点。对于稳态下的选择中性突变，该模型对分离核苷酸位点的数量和序列配对之间核苷酸差异的平均数量进行了具体预测。
+8. 基于无限位点模型的预测允许基于观察样本中的各种特征对中性假设进行统计检验，例如等位基因频谱的均匀性（Tajima’s D）或单例突变（singleton）与非单例突变（nonsingleton）的数量（Fu和Li检验）。
+9. 重组可以形成有益的基因组合，但对重组的进化起源没有达成共识。在无性生物中，克隆干扰降低了选择的效率。在有性生物中，群体遗传模型表明，选择可以放大有利突变之间的负连锁不平衡，特别是在小群体中，这一过程有利于增加重组。
+10. 一些细菌物种的基因组，如大肠杆菌（ *E. coli* ），在长遗传距离上显示出广泛的连锁不平衡，尽管由于基因内重组，每个基因可能具有嵌合体祖先。这一明显的悖论是因为细菌中的重组通常涉及短链DNA，而且这个过程很少发生。
+11. 在动物线粒体DNA（mtDNA）中，母系遗传和缺乏重组使对线粒体谱系的追踪能够推断群体历史和群体亚结构。非母系遗传的mtDNA确实存在孤例，而动物mtDNA重组究竟完全不存在还是非常罕见的问题依然存在极大的争议。
+
+## 课后习题
+
+1. Most protein-coding genes have a forward mutation rate (wildtype to mutant) that is at least an order of magnitude greater than the reverse mutation rate (mutant back to wildtype). Why should this be the case?
+2. What is the Hill-Robertson effect and what causes it?
+3. What is Muller's ratchet and why is it important in populations that undergo frequent bottlenecks of population size?
+4. A classical bacterial experiment demonstrated that mutations occur at random and not in response to specific selection pressures for them. The experiment used sterilized velvet to imprint the geometrical pattern of bacterial colonies on an agar surface in a petri dish (a "plate"), which was used to replicate the pattern by impressing the velvet on sterile nutrient agar in a selective plate containing an antibiotic. Colonies on the original plate giving resistant cells on the selective plate were dispersed into single cells, spread onto a nutrient agar plate without antibiotic, and allowed to multiply into colonies. This procedure was repeated until one or more colonies on the nonselective medium consisted exclusively of antibiotic-resistant cells. How does this experiment prove the point?
+5. Estimation of mutation rates from bacterial cultures can be tricky because, if a mutation occurs early in the life of a culture, the final frequency will be very high, but if it occurs late, the final frequency will be low. The *fluctuation test* is a method for getting around this problem by growing many smaller cultures and estimating the mutation rate from the proportion of cultures that contain no mutations using the zero term of the Poisson distribution $P_0 = exp(-μN)$ , where $P_0$  is the proportion of cultures with no mutations, $μ$ is the mutation rate, and $N$ is the average number of cells per culture. In one experiment for bacteriophage T1 resistance, 11/20 cultures contained no mutations and the average number of cells per culture was $5.6 \times 10^8$. Estimate  $\mu$ .
+6. If recessive lethals occur independently in *Drosophila* autosomes, and the probability that an autosome contains one or more recessive lethals is 0.35 (a typical figure for chromosomes isolated from natural populations), what is the average number of recessive lethals per chromosome? Assume that the distribution of lethals is Poisson so that the probability of a chromosome containing exactly $i$ lethals is
+
+    $$
+    \text{Pr}\{\text{exactly}\ i\ \text{lethals}\}=\frac{m^i}{i!}e^{-m}
+    $$
+
+    where $m$ is the mean number of lethals per autosome.
+7. The doubling dose of radiation is the quantity of radiation that induces as many mutations as occur spontaneously, so the total mutation rate of organisms exposed to the doubling dose equals two times the spontaneous mutation rate. Below are the induction rates per rad of x-rays (a standard measure of dose) for various genetic end points in irradiated male mice, along with the spontaneous rates. What are the corresponding doubling doses?
+
+|    |Induction rate/rad|Spontaneous rate|
+|----|-----------------|----------------|
+|Dominant lethals| $5\times 10^{-4}$ /gamete|$2\ \text{to}\ 10 \times 10^{-2}$ /gamete|
+|Recessive visibles| $7\times 10^{-8}$/locus|$8\times 10^{-6}$ /locus|
+|Reciprocal translocations| $1\ \text{to}\ 2 \times 10^{-5}$ /cell| $2\ \text{to}\ 5 \times 10^{-4}$ /cell|
+
+8. For irreversible mutation with a forward mutation rate $\mu = 5 × 10^6$ , calculate the expected allele frequency $p$ after 10, 100, 1000, and 10000 generations, assuming $p_0 = 1.0$ .
+9. If a transposable genetic element becomes fixed at a particular site but undergoes deletion at the rate of 1% per generation, how many generations are required to decrease the frequency of the element at the site to 90% ?
+10.  The following data give the frequency $q$ of bacteria resistant to a bacteriophage after $t$ generations of chemostat growth. At $t = 12$ hours a novel metabolite was added to the medium.
+  + (a) What is the basal rate of mutation to resistance?
+  + (b) What is the effect of the novel metabolite on the mutation rate?
+
+
+|t|q          |t |q             |
+|-|-----------|--|--------------|
+|0|$1×10^{-6}$|16|$7.04×10^{-6}$|
+|4|$3×10^{-6}$|20|$7.08×10^{-6}$|
+|8|$5×10^{-6}$|24|$7.12×10^{-6}$|
+|12|$7×10^{-6}$| |              |
+
+11.   In the model of forward and reverse mutation, what is the equilibrium
+frequency $p$ of $A$ if
+  + (a) $\mu =10^{-5}$ and $v=10^{-6}$?
+  + (b) $\mu$ is increased tenfold?
+  + (c) $v$ is increased tenfold?
+  + (d) both are increased tenfold?
+  
+12.  In the model of forward and reverse mutation, show that the time required for the allele frequency to go halfway to equilibrium is approximately $t = 0.69/(u + v)$ generations. Use the approximation that $ln(1 - x)\approx-x$ when $x$ is small. What time is required to go halfway to equilibrium
+when $\mu= 10^{-5}$  and $v = 10^{-6}$ ?
+13.  In the model of irreversible mutation, what is the frequency $q_t$ , of allele $a$ in generation $t$ if the mutation rate changes from generation to generation? If the equation $q_t = q_0 + \mu t$ is applied to this situation, what value corresponds to u?
+14.  A population at steady state in the infinite-alleles neutral model has a homozygosity $F$ equal to 12.5%. What value of $\theta = 4N\mu$ is indicated? With random mating, how many equally frequent alleles would be required to produce the same level of homozygosity?
+15.  What sample values are compared in Tajima's D, and what is the rationale for the comparison?
+16.  A sample of size $n = 12$ includes $S = 50$ segregating nucleotide sites. Assuming that the sample conforms to the expectations of the neutral infinite-sites model at steady state, what is the expected average number of pairwise mismatches $\Pi$ ? What is the average number of pairwise mismatches per segregating site? How many pairwise mismatches per segregating site would result from a singleton nucleotide?
+17.  What sample values are compared in the Fu and Li test, and what is the rationale for the comparison?
+18.  A sample of size $n = 15$ includes $S=75$ segregating nucleotide sites. Assuming that the sample conforms to the expectations of the neutral infinite-sites model at steady state, what is the expected number of singleton nucleotide polymorphisms? What is the expected number of nonsingleton nucleotide polymorphisms?
+19.  For neutral coalescence, show that the expected fraction of polymorphic nucleotides that are singletons equals $1/a$ , where $a = 1 + (\frac{1}{2}) + (\frac{1}{3}) + .. + [1/(n - 1)]$ and $n$ is the number of alleles in the sample. Calculate this fraction for n = 2, 5, 10, 20, 50, and 100.
+20.  The accompanying illustration shows a coalescent tree for a sample of size $n = 3$ . What are the expected lengths, in units of generations, along each of the labeled branches? Show that the expected total length of all the branches taken together equals $4Na$ , where $a = 1 +\frac{1}{2}=\frac{3}{2}$ . Show also that the expected length of all the external branches equals $4N$ and that the expected length of all the internal branches equals $4N(a-1)$ . Use the principle that the expected time in generations for $k$ neutral alleles to coalesce into $k - 1$ alleles equals $4N/[k(k-1)]$ .
+
+![](asset/fig4.problem20.png)
+
+21. One might naively think that samples from an infinite-alleles neutral model should contain roughly equal numbers of the alleles represented. But this is far from the truth. The expected sample configurations are very unequal, because the representation of each allele depends on the time in evolutionary history when it was created by mutation and the manner in which its frequency was affected by random genetic drift. To take a specific example, consider a sample of size $n = 6$ from a population evolving according to the infinite-alleles neutral model, and suppose that the sample contains only $k = 2$ different alleles. Let the configuration of alleles in the sample be represented as $(a_1, a_2, a_3, a_4, a_5)$ , where $a_i$  is the number of alleles represented exactly $i$ times, with $\sum ia_i = 6$ . It can be shown from Ewen's sampling formula that the probability of the configuation $(a_1, a_2, a_3, a_4, a_5)$ equals
+
+$$
+\text{Pr}\{a_1,a_2,a_3,a_4,a_5|k=2\}
+=\frac{6!}{274×1^{a_1}2^{a_2}3^{a_3}4^{a_4}5^{a_5} ×a_1!a_2!a_3!a_4!a_5!}
+$$
+
+(Equation 9.30 in Ewens 2004). In this case only three sample configurations are possible, namely $x = (1, 0, 0, 0, 1)$ , $y = (0, 1, 0, 1, 0)$ , and $z = (0, 0,2, 0,0)$ . Calculate the probabilities of $x$ , $y$ , and $z$ , and the expected proportion of samples in which the numbers of the two alleles are not equal.
+22. For the infinite-alleles neutral model, the probability that a sample of size $n = 6$ contains exactly $k = 3$ alleles in the configuration $(a1, a2, a3, a4)$ is given by
+
+
+$$
+\text{Pr}\{a_1,a_2,a_3,a_4,a_5|k=2\}
+=\frac{6!}{274×1^{a_1}2^{a_2}3^{a_3}4^{a_4}5^{a_5} ×a_1!a_2!a_3!a_4!a_5!}
+$$
+
+where $a_i$  is the number of alleles represented $i$ times in the sample, and $\sum ia_i = 6$ (Equation 9.30 in Ewens 2004). What sample configurations $(a_1,a_2, a_3, a_4)$ are possible, and what are their probabilities?
 
 
 
