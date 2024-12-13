@@ -4,7 +4,7 @@
 
 <div style="position:fixed;height:20px;right:50px;bottom:80px;background-color:#ddd;color:#069;padding:5px;border-radius:20px;box-shadow:0px 0px 4px #aaa;cursor:pointer;" onclick="javascript:window.location.href='#top'"><i class="fa fa-arrow-up"></i><b> 返回顶部 </b></div>
 
-到写作本书的时间为止，术语 “自然选择”（ *natural selection* ） 已经被达尔文在《物种起源》（ *The Origin of Species* ）（Darwin，1859）中使用在了一个非正式的、直观的场景中了：
+到写作本书的时间为止，术语 “自然选择”（ *natural selection* ） 已经被达尔文在《物种起源》（ *The Origin of Species* ）（Darwin，1859）这本书中使用在了一个非正式的、直观的场景中了：
 
 > Owing to this struggle for life, variations, however slight and from whatever cause proceeding, if they be in any degree profitable to the *individuals* of a species, in their infinitely complex relations to other organic beings and to their physical conditions of life, will tend to the preservation of such *individuals* , and will generally be inherited by the offspring. The offspring, also, will thus have a better chance of surviving, for, of the many *individuals* of any species which are periodically born, but a small number can survive. I have called this principle, by which each slight variation, if useful, is preserved, by the term Natural Selection.  
 >
@@ -158,7 +158,7 @@ $$
 
 毫不奇怪，如果A的相对适合度大于1，则 $p$ 增加；如果A的相对适合度小于1，则 $p$ 减少。如果A和B的相对适合度相等，那么 $p$ 不会改变——当然这也有前提，即群体规模非常大（理论上，群体规模必须是无限的）。
 
-在连续模型中，我们需要与方程（5.6）对标的数学公式，在这样的公式中导数 $dp/dt$ 将会代替 $\Delta p$ 。这个导师可以从方程（5.4）中得到，但需要一点技巧。因为 $A_t/B_t$ 等于 $p_t/q_t$ ，所以方程（5.4）相对于 $t$ 的导数必须等于 $p_t/q_t$ 相对于 $t$ 的导数。为了简单起见，我们同样省去 $p_t$ 和 $q_t$ 的下标。方程（5.4）关于 $t$ 的导数等于 $mp/q$ ， $p/q$ 关于 $t$ 的导数等于 $(1/q^2)(dp/dt)$ 。联立这两个式子，求解 $dp/dt$ ，我们可以得到
+在连续模型中，我们需要与方程（5.6）对标的数学公式，在这样的公式中导数 $dp/dt$ 将会代替 $\Delta p$ 。这个导数可以从方程（5.4）中得到，但需要一点技巧。因为 $A_t/B_t$ 等于 $p_t/q_t$ ，所以方程（5.4）相对于 $t$ 的导数必须等于 $p_t/q_t$ 相对于 $t$ 的导数。为了简单起见，我们同样省去 $p_t$ 和 $q_t$ 的下标。方程（5.4）关于 $t$ 的导数等于 $mp/q$ ， $p/q$ 关于 $t$ 的导数等于 $(1/q^2)(dp/dt)$ 。联立这两个式子，求解 $dp/dt$ ，我们可以得到
 
 $$
 \frac{dp}{dt}=pqm \tag{5.7}
@@ -249,9 +249,26 @@ $$
 
 请注意，图5.2中的四个面板非常不同，尽管它们应该是彼此的重复。统计检验表明，它们实际上与相同的选择模型 *不* 一致。Clegg等人（1976）建立的这项实验，不仅是为了跟踪 *Glued* 等位基因本身的动力学，而且是为了跟踪连锁基因通过 *基因搭车效应（genetic hitchhiking）* 发生变化的方式。有趣的是，连锁基因并没有遵循从 *Glued* 致死等位基因和重组中预测到的等位基因频率的简单轨迹。相反，连锁基因的频率变化只能通过遗传背景中存在额外的受选择等位基因来解释。在实验室中进行任何涉及自然选择的实验时，一个重要的考虑因素是，并不是所有的变量都可以测量，其他未观察到的基因座可能也处于选择压力之下！
 
+------------
 
+**问题5.3**
 
+具有多重倒位（multiple inversion）的平衡染色体在果蝇种群遗传学中很重要，因为它们允许研究人员从自然种群中分离出单个染色体进行研究。Dobzhansky和Spassky（1963）估计了1063个野生来源的 *D. pseudoobscura* 二号染色体纯合子与携带平衡染色体的杂合子的相对存活率，并发现这些野生染色体随机配对的纯合子存活率和杂合子存活率之间没有相关性。为了评估总体适合度，可以通过观察笼养群体中等位基因频率的变化来跟踪等位基因频率的全部动态。Sved和Ayala（1970年）开发了一种用于估计果蝇整个染色体总体适合度的方法，该方法利用了类似的平衡染色体系统，但跟踪的是笼养群体中的频率变化。由于平衡染色体的纯合子（Ba/Ba）是致死的，所以只有两种存活的基因型：Ba/+ 和 +/+. 在一个笼养群体中，Ba/+ 杂合子的频率为0.486，在下一代中这个频率变为0.726。请问Ba/+ 相对于 +/+ 的净适合度是多少？
 
+------------
+
+**答案：**
+
+对于平衡染色体来说，等位基因频率是杂合子频率的一半，因此等位基因频率从 
+$p=0.486/2=0.243$ 改变为 $0.726/2=0.363$ 。如果我们令 Ba/+ 基因型相比于 +/+ 的相对适合度为 $w$ （Ba/Ba的适合度为0），那么野生型等位基因频率的递归表达式为 $q'=(wpq+q^2)/(2pqw+q^2)$ 。现在我们将数字带入其中，得 $0.637=[w(0.243)(0.757)+(0.757)^2]/[w\times 2(0.243)(0.757)+(0.757)^2]$ 。解方程，得 $w=4.13$ 。另一种表达方式是说，相对于携带平衡染色体的杂合子，野生型纯合子的相对适合度是 $1/(4.13)=0.2421/(4.13)=0.242$ 。Sved 和 Ayala 努力尝试将适合度分解为生存能力和繁殖能力两个组成部分，并表明两者都在决定二号染色体之间的适合度差异方面扮演了重要角色。 
+
+------------
+
+图5.3展示了定向选择（directional selection）的另一个重要方面。当一个新的突变是有利的时候，如果它是显性的，那么它在频率上的增长会比它是隐性的时候快得多。原因是稀有等位基因几乎完全存在于杂合子中，而如果突变是完全隐性的，那么它的适合度效应不会像该等位基因为显性时那样显著地表现出来。当等位基因变得普遍时，情况就反转了，显性等位基因的频率变化非常缓慢，而常见的隐性等位基因的频率则迅速变化。同样的逻辑适用：当一个群体中存在常见的显性等位基因时，几乎所有个体的适合度都是相同的，因此选择对等位基因频率的变化影响很小。
+
+通过将 $p'$ 和 $q'$ 的公式代入 $\bar w$ ，可以推导出一个关于 $\bar w'$ 的方程，该方程给出了平均群体适合度随世代变化的递归关系。进一步的代数运算表明，在具有恒定适合度选择的单一基因座双等位基因模型中，平均适合度 $\bar w$ 是非递减的。我们也可以证明，每当群体处于平衡等位基因频率时，平均适合度 $\bar w$ 位于局部最大值。这个平均适合度的性质是Fisher（1930） *自然选择基本定理（fundamental theorem of natural selection）* 的一部分，该定理指出，由于基因频率变化导致的群体平均适合度的增长率恰好等于适合度的加性遗传变异。直到Ewens（1989）才有了对Fisher定理令人信服的证明，部分原因在于Fisher对该定理陈述的微妙解释（参见Edwards 2002）。令人惊讶的是，在所有模型中，平均适合度并不总是增加，而且平衡往往不是平均适合度的最大值。
+
+### 边际适合度与多等位基因选择
 
 
 
