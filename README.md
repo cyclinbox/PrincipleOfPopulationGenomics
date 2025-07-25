@@ -6,6 +6,8 @@
 
 文档已经以GitHub Pages的形式发布。请访问[https://cyclinbox.github.io/PrincipleOfPopulationGenomics/](https://cyclinbox.github.io/PrincipleOfPopulationGenomics/)进行阅读。
 
+要阅读英文原版书（PDF扫描件），请直接访问根目录文件或下载 [Principle of population genetics 4th ed - Hartl and Clark.pdf](https://raw.githubusercontent.com/cyclinbox/PrincipleOfPopulationGenomics/refs/heads/main/Principle%20of%20population%20genetics%204th%20ed%20-%20Hartl%20and%20Clark.pdf) 
+
 
 ## 目录组织
 
@@ -46,3 +48,7 @@
 2022-12-26 优化了部分html代码
 
 2023-04-24 添加`deploy.sh`脚本文件
+
+
+
+
